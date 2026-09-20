@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import NavigationBar from "@/ui/NavigationBar";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -11,17 +11,36 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Vannaroth Ngoc",
+  metadataBase: new URL("https://vannaroth.com"),
+  title: {
+    default: "Vannaroth Ngoc — Software Engineer",
+    template: "%s | Vannaroth Ngoc",
+  },
   description: "Trying to make the Web a more friendly and welcoming place.",
+  authors: [{ name: "Vannaroth Ngoc" }],
+  creator: "Vannaroth Ngoc",
+  openGraph: {
+    title: "Vannaroth Ngoc — Software Engineer",
+    description: "Trying to make the Web a more friendly and welcoming place.",
+    url: "https://vannaroth.com",
+    siteName: "Vannaroth Ngoc",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vannaroth Ngoc — Software Engineer",
+    description: "Trying to make the Web a more friendly and welcoming place.",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
       <html lang="en" className={`${spaceGrotesk.variable} h-full antialiased`}>
-      <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
       <body className="min-h-full flex flex-col mx-auto max-w-360">
         <NavigationBar />
         {children}
