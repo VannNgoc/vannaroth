@@ -43,3 +43,37 @@ next-env.d.ts
 AGENTS.md
 CLAUDE.md
 
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS-generated
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.AppleDouble
+.LSOverride
+
+# secrets / credentials — never commit real keys
+*.key
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+serviceAccountKey.json
+.npmrc
+
+# logs
+*.log
+logs/
+
+# caches
+.eslintcache
+.turbo/
+.swc/
+.cache/
+.nyc_output
