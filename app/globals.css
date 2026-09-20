@@ -34,16 +34,24 @@
   .btn-primary,
   .btn-secondary {
     @apply inline-flex items-center gap-2 rounded-lg px-5.5 py-3
-    text-[15px] font-semibold transition-colors cursor-pointer;
+    text-[15px] font-semibold transition cursor-pointer
+    outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700
+    [-webkit-tap-highlight-color:transparent];
   }
 
   .btn-primary {
-    @apply bg-zinc-900 text-white hover:bg-black;
+    @apply bg-zinc-900 text-white
+    [@media(hover:hover)]:hover:bg-black
+    active:bg-black active:scale-[0.98]
+    aria-selected:bg-black aria-selected:scale-[0.98];
   }
 
   .btn-secondary {
     @apply border border-zinc-200 bg-transparent text-zinc-900
-    hover:border-zinc-900 hover:text-zinc-900 hover:no-underline;
+    [@media(hover:hover)]:hover:border-zinc-900 [@media(hover:hover)]:hover:text-zinc-900
+    [@media(hover:hover)]:hover:bg-zinc-50 [@media(hover:hover)]:hover:no-underline
+    active:bg-zinc-100 active:scale-[0.98]
+    aria-selected:border-zinc-900 aria-selected:bg-zinc-100;
   }
 
   .icon-link {

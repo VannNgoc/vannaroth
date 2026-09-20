@@ -1,16 +1,16 @@
 import Link from 'next/link'
 export default function Hero(){
     return(
-        <section className={`my-32 w-full`}>
-            <div className="flex flex-col items-center">
-                <h2 className='text-green-800 text-base'>Web Developer</h2>
-                <h1 className=''>Vannaroth Ngoc</h1>
+        <section className={`px-4 my-16 md:my-32 w-full`}>
+            <div className="flex flex-col items-start md:items-center">
+                <h2 className='text-green-800 text-base text-left md:text-center'>Web Developer</h2>
+                <h1 className='text-left md:text-center'>Vannaroth Ngoc</h1>
 
                 <div className={'max-w-3xl py-4'}>
                     <p>Trying to make the web a more friendly and welcoming place.</p>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center gap-6 py-4">
+                <div className="flex flex-row items-center gap-6 py-4">
                     <Link className='btn-primary' href='https://vann-recollections.vercel.app/'>View Blog</Link>
                     <Link className='btn-secondary' href='about-me'>More About Me</Link>
                 </div>
