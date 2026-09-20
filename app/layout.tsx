@@ -31,11 +31,13 @@ export const metadata: Metadata = {
     title: "Vannaroth Ngoc — Software Engineer",
     description: "Trying to make the Web a more friendly and welcoming place.",
   },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#FAFAF7",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
