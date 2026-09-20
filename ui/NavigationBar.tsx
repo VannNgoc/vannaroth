@@ -1,12 +1,16 @@
 import {HamburgerMenu} from "./HamburgerMenu";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavigationBar(){
     return(
-        <div className="navbar-container m-4">
+        <div className="navbar-container m-4 border-b border-zinc-200 pb-4">
             <nav className="flex gap-4 justify-between items-start">
                 <div>
-                    <Link href={"./"} className={`text-xl logo`}>Vannaroth Ngoc</Link>
+                    <Link href={"./"} className="flex items-center gap-2 text-xl logo">
+                        <Image src="/logo-mark.png" alt="" width={28} height={28} priority />
+                        Vannaroth Ngoc
+                    </Link>
                 </div>
                 <HamburgerMenu/>
                 <div className="flex flex-col md:flex-row hidden  md:block">
