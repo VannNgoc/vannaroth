@@ -54,7 +54,8 @@
 }
 
 :root {
-  background: #FAFAF7;
+  --background: #FAFAF7;
+  --foreground: #18181B;
 }
 
 .dark {

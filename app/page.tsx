@@ -1,5 +1,4 @@
 
-import NavigationBar from "@/ui/NavigationBar";
 import Hero from "@/ui/Hero";
 
 export default function Home() {
