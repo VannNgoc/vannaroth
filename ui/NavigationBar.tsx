@@ -14,7 +14,7 @@ export default function NavigationBar(){
                         <Link className="hover:underline mx-2" href="/about-me">About Me</Link>
                         <Link className="hover:underline mx-2" href="/projects">Projects</Link>
                         <Link className="hover:underline mx-2" href="/contact">Contact Me</Link>
-                        <Link className={'btn-primary ml-2'} rel="noopener noreferrer" aria-label="Download résumé (opens in a new tab)" target={"_blank"} href={`resume.pdf`}>Resume</Link>
+                        <a className={'btn-primary ml-2'} rel="noopener noreferrer" aria-label="Download résumé (opens in a new tab)" target={"_blank"} href={"/resume.pdf"}>Resume</a>
                 </div>
             </nav>
         </div>
