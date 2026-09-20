@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/*noinspection CssUnresolvedCustomProperty*/
 @theme inline{
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -33,7 +34,7 @@
   .btn,
   .btn-primary,
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-lg px-[22px] py-3
+    @apply inline-flex items-center gap-2 rounded-lg px-5.5 py-3
     text-[15px] font-semibold transition-colors cursor-pointer;
   }
 
@@ -54,7 +55,6 @@
 
 :root {
   background: #FAFAF7;
-  foreground: #18181B;
 }
 
 .dark {
