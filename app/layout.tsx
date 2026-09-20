@@ -18,6 +18,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
       <html lang="en" className={`${spaceGrotesk.variable} h-full antialiased`}>
+      <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Vannaroth Ngoc</title>
+      </head>
       <body className="min-h-full flex flex-col mx-auto max-w-360">
         <NavigationBar />
         {children}
