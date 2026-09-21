@@ -1,9 +1,9 @@
 import Link from 'next/link'
 export default function Hero(){
     return(
-        <section className={`px-4 my-16 md:py-32 w-full`}>
+        <section className={`px-4 py-16 md:py-20 w-full`}>
             <div className="flex flex-col items-start md:items-center overflow-hidden">
-                <h2 className='text-green-800 text-base text-left md:text-center'>Web Developer</h2>
+                <h2 className='text-green-800 text-base text-left md:text-center'>Frontend Engineer</h2>
                 <h1 className='text-left leading-none md:text-center'>Vannaroth Ngoc</h1>
                 <div className={'max-w-3xl py-4'}>
                     <p>Trying to make the web a more friendly and welcoming place.</p>
