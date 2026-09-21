@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import NavigationBar from "@/ui/NavigationBar";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -42,7 +44,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-      <html lang="en" className={`${spaceGrotesk.variable} h-full antialiased`}>
+      <html lang="en" className={cn("h-full", "antialiased", spaceGrotesk.variable, "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col mx-auto max-w-360">
         <NavigationBar />
         {children}
