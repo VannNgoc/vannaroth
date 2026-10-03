@@ -3,7 +3,7 @@ export default function Hero(){
     return(
         <section className={`px-4 py-16 md:py-20 w-full`}>
             <div className="flex flex-col items-start md:items-center overflow-hidden">
-                <h2 className='text-green-800 text-base text-left md:text-center'>Frontend Engineer</h2>
+                <h2 className='text-green-800 text-base text-left md:text-center'>Frontend Developer</h2>
                 <h1 className='text-left leading-none md:text-center'>Vannaroth Ngoc</h1>
                 <div className={'max-w-3xl py-4'}>
                     <p>Trying to make the web a more friendly and welcoming place.</p>
@@ -11,8 +11,8 @@ export default function Hero(){
 
                 <div className="flex flex-row items-center gap-6 py-4">
                     <Link className='btn-primary' href='/resume.pdf'>Resume</Link>
-                    <Link className='btn-secondary' href='https://vann-recollections.vercel.app/'>View Blog</Link>
-                    {/*<Link className='btn-secondary' href='about-me'>More About Me</Link>*/}
+                    {/*<Link className='btn-secondary' href='https://vann-recollections.vercel.app/'>View Blog</Link>*/}
+                    <Link className='btn-secondary' href='about-me'>More About Me</Link>
                 </div>
 
                 <div className="mt-11 flex flex-wrap gap-7">

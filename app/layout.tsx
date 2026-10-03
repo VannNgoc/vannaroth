@@ -3,6 +3,7 @@ import NavigationBar from "@/ui/NavigationBar";
 import { Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -15,14 +16,14 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://vannaroth.com"),
   title: {
-    default: "Vannaroth Ngoc — Software Engineer",
+    default: "Vannaroth Ngoc — Frontend Developer",
     template: "%s | Vannaroth Ngoc",
   },
   description: "Trying to make the Web a more friendly and welcoming place.",
   authors: [{ name: "Vannaroth Ngoc" }],
   creator: "Vannaroth Ngoc",
   openGraph: {
-    title: "Vannaroth Ngoc — Software Engineer",
+    title: "Vannaroth Ngoc — Frontend Developer",
     description: "Trying to make the Web a more friendly and welcoming place.",
     url: "https://vannaroth.com",
     siteName: "Vannaroth Ngoc",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vannaroth Ngoc — Software Engineer",
+    title: "Vannaroth Ngoc — Frontend Developer",
     description: "Trying to make the Web a more friendly and welcoming place.",
   },
   manifest: "/site.webmanifest",
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-full flex flex-col mx-auto max-w-360">
         <NavigationBar />
         {children}
+        <SpeedInsights />
       </body>
       </html>
   );

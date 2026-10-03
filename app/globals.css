@@ -24,6 +24,13 @@
   html {
     @apply font-sans bg-background text-foreground;
   }
+
+  /* Visible keyboard focus for every interactive element */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    @apply rounded-sm outline-solid outline-2 outline-offset-2 outline-teal-700;
+  }
 }
 
 @layer components {
@@ -35,15 +42,15 @@
   .btn-secondary {
     @apply inline-flex items-center gap-2 rounded-lg px-5.5 py-3
     text-[15px] font-semibold transition cursor-pointer
-    outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700
+    outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700
     [-webkit-tap-highlight-color:transparent];
   }
 
   .btn-primary {
     @apply bg-zinc-900 text-white
-    [@media(hover:hover)]:hover:bg-black
-    active:bg-black active:scale-[0.98]
-    aria-selected:bg-black aria-selected:scale-[0.98];
+    [@media(hover:hover)]:hover:bg-green-800
+    active:bg-green-900 active:scale-[0.98]
+    aria-selected:bg-green-900 aria-selected:scale-[0.98];
   }
 
   .btn-secondary {

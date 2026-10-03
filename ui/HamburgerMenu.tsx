@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { ExternalLinkIcon } from "./ExternalLinkIcon";
 
-type NavLink = { href: string; label: string };
+type NavLink = { href: string; label: string; external?: boolean };
 
 export function HamburgerMenu({ navLinks }: { navLinks: NavLink[] }) {
     const [open, setOpen] = useState(false);
@@ -37,8 +38,8 @@ export function HamburgerMenu({ navLinks }: { navLinks: NavLink[] }) {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="hamburger rounded-md p-2.5 outline-none transition
-                focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700
+                className="hamburger rounded-md p-2.5 outline-hidden transition
+                focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700
                 [@media(hover:hover)]:hover:bg-zinc-100
                 active:bg-zinc-100 [-webkit-tap-highlight-color:transparent]"
             >
@@ -68,9 +69,11 @@ export function HamburgerMenu({ navLinks }: { navLinks: NavLink[] }) {
                             key={link.href}
                             href={link.href}
                             onClick={() => setOpen(false)}
-                            className="rounded-md px-3 py-2.5 text-[15px] hover:bg-zinc-100 hover:no-underline"
+                            {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+                            className="flex items-center gap-1.5 rounded-md px-3 py-2.5 text-[15px] hover:bg-zinc-100 hover:no-underline active:bg-zinc-200"
                         >
                             {link.label}
+                            {link.external && <ExternalLinkIcon />}
                         </Link>
                     ))}
                     <a

@@ -1,13 +1,15 @@
 import {HamburgerMenu} from "./HamburgerMenu";
 import Link from "next/link";
 import Image from "next/image";
+import {ExternalLinkIcon} from "./ExternalLinkIcon";
 
-// const navLinks = [
-//     // { href: "/", label: "Home" },
-//     // { href: "/about-me", label: "About Me" },
-//     // { href: "/projects", label: "Projects" },
-//     // { href: "/contact", label: "Contact Me" },
-// ];
+const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about-me", label: "About Me" },
+    { href: "https://vann-recollections.vercel.app/", label: "Blog", external: true },
+    // { href: "/projects", label: "Projects" },
+    { href: "mailto:vannaroth.ngoc@outlook.com", label: "Contact Me" },
+];
 
 export default function NavigationBar(){
     return(
@@ -19,15 +21,21 @@ export default function NavigationBar(){
                         Vannaroth Ngoc
                     </Link>
                 </div>
-                {/*<HamburgerMenu navLinks={navLinks} />*/}
-                {/*<div className="hidden md:flex md:items-center">*/}
-                {/*    {navLinks.map((link) => (*/}
-                {/*        <Link key={link.href} className="hover:underline mx-2" href={link.href}>*/}
-                {/*            {link.label}*/}
-                {/*        </Link>*/}
-                {/*    ))}*/}
-                {/*    <Link className="btn-primary ml-2" rel="noopener noreferrer" aria-label="Download résumé (opens in a new tab)" target="_blank" href="/resume.pdf">Resume</Link>*/}
-                {/*</div>*/}
+                <HamburgerMenu navLinks={navLinks} />
+                <div className="hidden md:flex md:items-center">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            className="hover:underline mx-2 inline-flex items-center gap-1"
+                            href={link.href}
+                            {...(link.external && {target: "_blank", rel: "noopener noreferrer"})}
+                        >
+                            {link.label}
+                            {link.external && <ExternalLinkIcon />}
+                        </Link>
+                    ))}
+                    <Link className="btn-primary ml-2" rel="noopener noreferrer" aria-label="Download résumé (opens in a new tab)" target="_blank" href="/resume.pdf">Resume</Link>
+                </div>
             </nav>
         </div>
     )
