@@ -1,6 +1,7 @@
 
 import Hero from "@/ui/Hero";
 import {Experience} from "@/ui/Experience";
+import {Education} from "@/ui/Education";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-360 flex-col items-center">
           <Hero/>
           <Experience/>
+          <Education/>
       </main>
     </div>
   );
